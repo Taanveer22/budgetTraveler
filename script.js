@@ -31,7 +31,7 @@ for (let oneAddButton of allAddButtons) {
     const selectedPlaceContainer = document.getElementById(
       "selected-place-container"
     );
-    console.log(selectedPlaceContainer);
+    // console.log(selectedPlaceContainer);
 
     // step 01 : create element
     const li = document.createElement("li");
@@ -46,6 +46,15 @@ for (let oneAddButton of allAddButtons) {
     li.appendChild(p1);
     li.appendChild(p2);
     selectedPlaceContainer.appendChild(li);
+
+    // style added to
+    event.target.parentNode.parentNode.style.backgroundColor = "green";
+    event.target.disabled = true;
+
+    // update the cart
+    count = count + 1;
+    // document.getElementById("cart-count").innerText = count;
+    setInnerTextById("cart-count", count);
 
     // invoke function to update cost
     totalCost("total-cost", parseFloat(placeCost));
@@ -65,10 +74,6 @@ for (let oneAddButton of allAddButtons) {
     // let sum2 = parseFloat(grandTotal) + parseFloat(placeCost);
     // console.log(sum2);
     // setInnerTextById("grand-total", sum2);
-
-    // update the cart count
-    // document.getElementById('cart-count').innerText = count;
-    setInnerTextById("cart-count", count);
   });
 }
 

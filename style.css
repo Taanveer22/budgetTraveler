@@ -6,6 +6,7 @@
   width: 100%;
 }
 .banner-container {
+  background-color: tomato;
   width: 80%;
   margin: auto;
   /* border: 1px solid gray; */
@@ -13,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  margin-top: 30px;
 }
 .banner-left {
   width: 50%;
@@ -25,6 +27,12 @@
 .title {
   font-size: 60px;
   margin-bottom: 10px;
+}
+
+.description {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: justify;
 }
 nav {
   display: flex;
@@ -70,12 +78,14 @@ nav {
   width: 150px;
   border-radius: 10px;
 }
-.palce {
+.place-div {
+  background-color: skyblue;
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 10px;
-  /* border: 1px solid #ccc; */
+  margin: 10px;
+  border: 1px solid #ccc;
   width: 270px;
   box-shadow: 4px 4px 8px gray;
   border-radius: 5px;
@@ -91,11 +101,13 @@ nav {
   margin-top: 15px;
 }
 .cart {
+  background-color: aquamarine;
   width: 100%;
   box-shadow: 8px 8px 16px gray;
   position: sticky;
   text-align: center;
   padding: 10px;
+  margin: 10px;
 }
 .cart-icon-container {
   position: absolute;
