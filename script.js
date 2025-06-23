@@ -39,7 +39,8 @@ for (let oneAddButton of allAddButtons) {
 
     // invoke function to update cost
     totalCost("total-cost", parseFloat(placeCost));
-    grandTotalCost("grand-total", parseFloat(placeCost));
+    // grandTotalCost("grand-total", parseFloat(placeCost));
+    grandTotalCost();
 
     // update the total cost
     // const totalCost = document.getElementById("total-cost").innerText;
@@ -81,10 +82,28 @@ function totalCost(id, value) {
 }
 
 // utf 03
-function grandTotalCost(id, value) {
-  const grandTotal = document.getElementById(id).innerText;
-  console.log(grandTotal);
-  let sum2 = parseFloat(grandTotal) + parseFloat(value);
-  console.log(sum2);
-  setInnerTextById("grand-total", sum2);
+// function grandTotalCost(id, value) {
+//   const grandTotal = document.getElementById(id).innerText;
+//   console.log(grandTotal);
+//   let sum2 = parseFloat(grandTotal) + parseFloat(value);
+//   console.log(sum2);
+//   setInnerTextById("grand-total", sum2);
+// }
+
+// utf 03 alternatinve
+function grandTotalCost(category) {
+  console.log(category);
+  
+  const totalCost = document.getElementById("total-cost").innerText;
+  const convertedTotalCost = parseFloat(totalCost);
+
+  if (category === "bus") {
+    setInnerTextById("grand-total", convertedTotalCost + 100);
+  } else if (category === "train") {
+    setInnerTextById("grand-total", convertedTotalCost - 200);
+  } else if (category === "flight") {
+    setInnerTextById("grand-total", convertedTotalCost + 500);
+  } else {
+    setInnerTextById("grand-total", convertedTotalCost);
+  }
 }
