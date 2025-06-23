@@ -17,6 +17,16 @@ for (let oneAddButton of allAddButtons) {
       event.target.parentNode.childNodes[3].childNodes[1].innerText;
     // console.log(placeCost);
 
+    // validation
+    const budget = document.getElementById("budget").innerText;
+    let budgetLimit = parseFloat(budget) - parseFloat(placeCost);
+
+    if (budgetLimit < 0) {
+      alert("budget is over...");
+      return;
+    }
+    document.getElementById("budget").innerText = budgetLimit;
+
     // create dynamic list under container
     const selectedPlaceContainer = document.getElementById(
       "selected-place-container"
@@ -93,7 +103,7 @@ function totalCost(id, value) {
 // utf 03 alternatinve
 function grandTotalCost(category) {
   console.log(category);
-  
+
   const totalCost = document.getElementById("total-cost").innerText;
   const convertedTotalCost = parseFloat(totalCost);
 
