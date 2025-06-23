@@ -37,25 +37,23 @@ for (let oneAddButton of allAddButtons) {
     li.appendChild(p2);
     selectedPlaceContainer.appendChild(li);
 
+    // invoke function to update cost
+    totalCost("total-cost", parseFloat(placeCost));
+    grandTotalCost("grand-total", parseFloat(placeCost));
+
     // update the total cost
-    const totalCost = document.getElementById("total-cost").innerText;
-    console.log(totalCost);
-
-    let sum = parseFloat(totalCost) + parseFloat(placeCost);
+    // const totalCost = document.getElementById("total-cost").innerText;
+    // console.log(totalCost);
+    // let sum = parseFloat(totalCost) + parseFloat(placeCost);
     // console.log(sum);
-
-    // document.getElementById("total-cost").innerText = sum;
-    setInnerTextById("total-cost", sum);
+    // setInnerTextById("total-cost", sum);
 
     // update the grand total
-    const grandTotal = document.getElementById("grand-total").innerText;
-    console.log(grandTotal);
-
-    let sum2 = parseFloat(grandTotal) + parseFloat(placeCost);
-    console.log(sum2);
-
-    // document.getElementById("grand-total").innerText = sum2;
-    setInnerTextById("grand-total", sum2);
+    // const grandTotal = document.getElementById("grand-total").innerText;
+    // console.log(grandTotal);
+    // let sum2 = parseFloat(grandTotal) + parseFloat(placeCost);
+    // console.log(sum2);
+    // setInnerTextById("grand-total", sum2);
 
     // update the cart count
     // document.getElementById('cart-count').innerText = count;
@@ -71,4 +69,22 @@ for (let oneAddButton of allAddButtons) {
 function setInnerTextById(id, value) {
   let result = (document.getElementById(id).innerText = value);
   return result;
+}
+
+// utf 02
+function totalCost(id, value) {
+  const totalCost = document.getElementById(id).innerText;
+  console.log(totalCost);
+  let sum = parseFloat(totalCost) + parseFloat(value);
+  console.log(sum);
+  setInnerTextById("total-cost", sum);
+}
+
+// utf 03
+function grandTotalCost(id, value) {
+  const grandTotal = document.getElementById(id).innerText;
+  console.log(grandTotal);
+  let sum2 = parseFloat(grandTotal) + parseFloat(value);
+  console.log(sum2);
+  setInnerTextById("grand-total", sum2);
 }
