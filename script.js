@@ -11,11 +11,11 @@ for (let oneAddButton of allAddButtons) {
     // console.log(event.target);
 
     const placeName = event.target.parentNode.childNodes[1].innerText;
-    console.log(placeName);
+    // console.log(placeName);
 
     const placeCost =
       event.target.parentNode.childNodes[3].childNodes[1].innerText;
-    console.log(placeCost);
+    // console.log(placeCost);
 
     // create dynamic list under container
     const selectedPlaceContainer = document.getElementById(
@@ -42,21 +42,30 @@ for (let oneAddButton of allAddButtons) {
     console.log(totalCost);
 
     let sum = parseFloat(totalCost) + parseFloat(placeCost);
-    console.log(sum);
+    // console.log(sum);
 
     // document.getElementById("total-cost").innerText = sum;
     setInnerTextById("total-cost", sum);
 
+    // update the grand total
+    const grandTotal = document.getElementById("grand-total").innerText;
+    console.log(grandTotal);
+
+    let sum2 = parseFloat(grandTotal) + parseFloat(placeCost);
+    console.log(sum2);
+
+    // document.getElementById("grand-total").innerText = sum2;
+    setInnerTextById("grand-total", sum2);
+
+    // update the cart count
     // document.getElementById('cart-count').innerText = count;
     setInnerTextById("cart-count", count);
   });
 }
 
-
 // ...............................................................
 // fuction starts here
 // ...............................................................
-
 
 // utf 01
 function setInnerTextById(id, value) {
